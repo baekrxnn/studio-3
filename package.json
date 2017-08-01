@@ -6,7 +6,7 @@
     "create-react-app": "^1.3.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-native-web": "^0.0.116"
+    "react-native-web": "^0.0.119"
   },
   "proxy": "https://react-native-web-playground.glitch.me",
   "devDependencies": {
