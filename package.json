@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "create-react-app": "^1.4.1",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-native-web": "^0.1.9"
+    "create-react-app": "^1.4.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-native-web": "^0.1.16"
   },
   "proxy": "https://react-native-web-playground.glitch.me",
   "devDependencies": {
