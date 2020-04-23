@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import InputBox from './InputBox.js';
 
-
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <div>
@@ -12,5 +12,3 @@ class App extends Component {
   }
 }
 
-
-export default App;
