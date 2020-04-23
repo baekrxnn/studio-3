@@ -6,10 +6,10 @@ export default class Word extends Component {
     constructor() {
         super();
         this.state = {
-            prompt: "color",
             index: 0,
+            prompt: "color",
             color: "blue",
-            wording: "green"
+            wording: "green",
         }
     }
   
@@ -23,10 +23,18 @@ export default class Word extends Component {
             "purple",
             "black"
         ];
+
+        let promptColor = Math.floor(Math.random()*colors.length);
+        let promptWord = Math.floor(Math.random()*colors.length);
+        this.setState ({
+            color: colors[promptColor],
+            wording: colors[promptColor],
+        })
+        
     }
     
     render() {
-        
+        // this.question();
         return (
             <div>
                 <h1 style={{color:this.state.color}}>{this.state.wording}</h1>
