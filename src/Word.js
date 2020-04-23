@@ -6,13 +6,13 @@ export default class Word extends Component {
         super();
         this.state = {
             index: 0,
-            color: "black"
+            color: "blue"
         }
     }
     
     render() {
         return (
-            <h1>the word</h1>
+            <h1 style={{color:this.state.color}}>the word</h1>
         );
     }
 }
