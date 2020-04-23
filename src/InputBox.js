@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 
 export default class ImportBox extends Component{
+    constructor() {
+      super();
+    }
+    
+    answerCheck = (event) => {
+        let color = this.props.color;
+        let word = this.props.word;
+    }
+    
     render() {
         return (
           <div className="box">
