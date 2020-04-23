@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-export default class ImportBox extends React {
+export default class ImportBox extends Component{
     render() {
         return (
           <div>
-              <h1> Type the word/color</h1>
-              <h1> word </h1>
+              <h1> Type the word/color </h1>
+              <input ></input>
           </div>
         )
     }
