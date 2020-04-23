@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import './App.css';
 
-// see https://github.com/necolas/react-native-web
 
 class App extends Component {
   render() {
