@@ -5,9 +5,10 @@ export default class ImportBox extends Component{
       super();
     }
     
-    answerCheck = (event) => {
+    answerCheck = (value) => {
         let color = this.props.color;
         let word = this.props.word;
+        
     }
     
     render() {

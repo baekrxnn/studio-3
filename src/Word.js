@@ -38,7 +38,7 @@ export default class Word extends Component {
         return (
             <div>
                 <h1 style={{color:this.state.color}}>{this.state.wording}</h1>
-                <InputBox />
+                <InputBox color={this.state.color} word={this.state.word}/>
             </div>
             
         );
