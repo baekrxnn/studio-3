@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 export default class ImportBox extends Component{
     constructor() {
       super();
+      this.state = {
+          val: "hi"
+      }
     }
     
   
@@ -27,12 +30,10 @@ export default class ImportBox extends Component{
     }
     
     answerCheck = (value) => {
+        console.log(this.state.val);
         let prompt = this.props.prompt;
         let color = this.props.color;
         let word = this.props.word;
-        if (prompt === "color" ) {
-            console.log(color);
-        }
     }
     
     render() {
@@ -40,7 +41,7 @@ export default class ImportBox extends Component{
           <div className="box">
               <h1> Type the word/color </h1>
               <input placeholder="your answer here"></input>
-              <button onClick={this.answerCheck()}> submit </button>
+              <button val={this.state.val} onClick={this.answerCheck()}> submit </button>
           </div>
         )
     }
