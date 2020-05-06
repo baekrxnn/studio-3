@@ -7,6 +7,8 @@ export default class ImportBox extends Component{
           index: 0,
           val: "hi"
       }
+      this.handleSubmit = this.handleSubmit.bind(this);
+      this.answerCheck = this.answerCheck.bind(this);
     }
     
   
@@ -40,7 +42,9 @@ export default class ImportBox extends Component{
     }
     
     handleSubmit(event) {
-        event.preventDefault();
+        //event.preventDefault();
+        event.stopPropagation();
+        event.nativeEvent.stopImmediatePropagation();
         console.log("submitted")
     }
     
@@ -53,7 +57,7 @@ export default class ImportBox extends Component{
                       <input placeholder="your answer here" type="text" onChange={this.answerCheck()}></input>
                   </label>
                 {/*<input type="submit" value="Submit" />*/}
-                  <button onClick={this.handleSubmit}>submit</button>
+                  <button onClick={e => this.handleSubmit(e)}>submit</button>
               </form>
             {/*<button val={this.state.val} onClick={this.answerCheck()} key={this.state.index}> submit </button>*/}
           </div>
