@@ -39,17 +39,21 @@ export default class ImportBox extends Component{
         let word = this.props.word;
     }
     
-    handleSubmit = 
+    handleSubmit(event) {
+        event.preventDefault();
+        console.log("submitted")
+    }
     
     render() {
         return (
           <div className="box">
               <h1> Type the word/color </h1>
-              <form onSubmit={this.answerCheck()}>
+              <form onSubmit={this.handleSubmit()}>
                   <label>hi
                       <input placeholder="your answer here" type="text" onChange={this.answerCheck()}></input>
                   </label>
-                  <input type="submit" value="Submit" />
+                {/*<input type="submit" value="Submit" />*/}
+                  <button onClick={this.handleSubmit}>submit</button>
               </form>
             {/*<button val={this.state.val} onClick={this.answerCheck()} key={this.state.index}> submit </button>*/}
           </div>
