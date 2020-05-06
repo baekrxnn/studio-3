@@ -30,7 +30,7 @@ export default class ImportBox extends Component{
         
     }
     
-    answerCheck = (value) => {
+    answerCheck = (event) => {
         //this.setState({index: this.state.index+1});
         console.log("stan loona");
         console.log(this.state.index);
@@ -39,12 +39,19 @@ export default class ImportBox extends Component{
         let word = this.props.word;
     }
     
+    handleSubmit = 
+    
     render() {
         return (
           <div className="box">
               <h1> Type the word/color </h1>
-              <input placeholder="your answer here"></input>
-              <button val={this.state.val} onClick={this.answerCheck()} key={this.state.index}> submit </button>
+              <form onSubmit={this.answerCheck()}>
+                  <label>hi
+                      <input placeholder="your answer here" type="text" onChange={this.answerCheck()}></input>
+                  </label>
+                  <input type="submit" value="Submit" />
+              </form>
+            {/*<button val={this.state.val} onClick={this.answerCheck()} key={this.state.index}> submit </button>*/}
           </div>
         )
     }
