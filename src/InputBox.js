@@ -34,15 +34,12 @@ export default class ImportBox extends Component{
     
     answerCheck = (event) => {
         //this.setState({index: this.state.index+1});
-        console.log("stan loona");
         console.log(this.state.index);
-        let prompt = this.props.prompt;
-        let color = this.props.color;
-        let word = this.props.word;
+        // this.setState({value: event.target.value});
     }
     
     handleSubmit(event) {
-        //event.preventDefault();
+        // event.preventDefault();
         // event.stopPropagation();
         // event.nativeEvent.stopImmediatePropagation();
         console.log("submitted")
@@ -52,12 +49,12 @@ export default class ImportBox extends Component{
         return (
           <div className="box">
               <h1> Type the word/color </h1>
-              <form onSubmit={this.handleSubmit()}>
+              <form onSubmit={this.handleSubmit}>
                   <label>hi
                       <input placeholder="your answer here" type="text" onChange={this.answerCheck()}></input>
                   </label>
                 {/*<input type="submit" value="Submit" />*/}
-                  <button onClick={e => this.handleSubmit(e)}>submit</button>
+                  <button onClick={this.handleSubmit()}>submit</button>
               </form>
             {/*<button val={this.state.val} onClick={this.answerCheck()} key={this.state.index}> submit </button>*/}
           </div>
