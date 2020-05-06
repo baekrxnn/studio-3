@@ -7,6 +7,7 @@ export default class App extends Component {
     
     handler() {
         console.log("yES we CoDE");
+        this.setState({ind: this.state.ind+1});
     }
     
     render() {
@@ -14,7 +15,6 @@ export default class App extends Component {
           <div>
               <h1>hi!</h1>
               <Word />
-              <button onClick={this.handler()}>click</button>
           </div>
         );
     }

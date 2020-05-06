@@ -43,8 +43,8 @@ export default class ImportBox extends Component{
     
     handleSubmit(event) {
         //event.preventDefault();
-        event.stopPropagation();
-        event.nativeEvent.stopImmediatePropagation();
+        // event.stopPropagation();
+        // event.nativeEvent.stopImmediatePropagation();
         console.log("submitted")
     }
     
