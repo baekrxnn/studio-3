@@ -13,33 +13,36 @@ export default class Word extends Component {
         }
     }
   
-    question = () => {
-        let colors = [
-            "red",
-            "orange",
-            "yellow",
-            "green",
-            "blue",
-            "purple",
-            "black"
-        ];
+    // question = () => {
+    //     let colors = [
+    //         "red",
+    //         "orange",
+    //         "yellow",
+    //         "green",
+    //         "blue",
+    //         "purple",
+    //         "black"
+    //     ];
 
-        let promptColor = Math.floor(Math.random()*colors.length);
-        let promptWord = Math.floor(Math.random()*colors.length);
-        this.setState ({
-            color: colors[promptColor],
-            wording: colors[promptColor],
-        })
-        
-    }
+    //     let promptColor = Math.floor(Math.random()*colors.length);
+    //     let promptWord = Math.floor(Math.random()*colors.length);
+    //     this.setState ({
+    //         color: colors[promptColor],
+    //         wording: colors[promptColor],
+    //     })
+    // }
     
     render() {
         // this.question();
         return (
             <div>
+                {/*
                 <h1 style={{color:this.state.color}}>{this.state.wording}</h1>
-                <h2>Type the {this.state.prompt}!</h2>
-                <InputBox prompt={this.state.prompt} color={this.state.color} word={this.state.wording}/>
+                <h2>Type the {this.state.prompt}!</h2>*/
+                }
+                <h1 style={{color:this.props.color}}>{this.props.wording}</h1>
+                <h2>Type the {this.props.prompt}!</h2>
+                
             </div>
             
         );
