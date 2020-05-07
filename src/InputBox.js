@@ -1,63 +1,48 @@
 import React, { Component } from 'react';
 
-export default class ImportBox extends Component{
+export default class InputBox extends Component{
     constructor() {
-      super();
-      this.state = {
-          index: 0,
-          val: "hi"
-      }
-      this.handleSubmit = this.handleSubmit.bind(this);
-      this.answerCheck = this.answerCheck.bind(this);
-    }
-    
-  
-    question = () => {
-        let colors = [
-            "red",
-            "orange",
-            "yellow",
-            "green",
-            "blue",
-            "purple",
-            "black"
-        ];
-
-        let promptColor = Math.floor(Math.random()*colors.length);
-        let promptWord = Math.floor(Math.random()*colors.length);
-        this.setState ({
-            color: colors[promptColor],
-            wording: colors[promptColor],
-        })
-        
+        super();
+        this.state = {
+            score: 0,
+            value: "hi",
+            question: ""
+        }
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.answerCheck = this.answerCheck.bind(this);
     }
     
     answerCheck = (event) => {
-        //this.setState({index: this.state.index+1});
-        console.log(this.state.index);
-        // this.setState({value: event.target.value});
+        this.setState({value: event.target.value});
+        // console.log(this.state.value);
     }
     
-    handleSubmit(event) {
-        // event.preventDefault();
+    handleSubmit = (event) => {
+        // this.setState({value: event.target.value});
+        let prompt = this.props.prompt;
+        let color = this.props.color;
+        let word = this.props.word;
+        // console.log(prompt + color + word);
+        event.preventDefault();
+        console.log(this.state.value);
+        if (prompt === "color" && this.state.value === color) {
+            this.setState({score: this.state.score++});
+            console.log(this.state.score);
+        } else if (prompt === "word" && this.state.value === word) {
+            this.setState({score: this.state.score++});
+            console.log(this.state.score);
+        }
         // event.stopPropagation();
         // event.nativeEvent.stopImmediatePropagation();
-        console.log("submitted")
+        // console.log("submitted");
     }
     
     render() {
         return (
-          <div className="box">
-              <h1> Type the word/color </h1>
-              <form onSubmit={this.handleSubmit}>
-                  <label>hi
-                      <input placeholder="your answer here" type="text" onChange={this.answerCheck()}></input>
-                  </label>
-                {/*<input type="submit" value="Submit" />*/}
-                  <button onClick={this.handleSubmit()}>submit</button>
-              </form>
-            {/*<button val={this.state.val} onClick={this.answerCheck()} key={this.state.index}> submit </button>*/}
-          </div>
+            <div className="box">
+                <input value={this.state.value} onChange={this.answerCheck}></input>
+                <button onClick={this.handleSubmit}> click</button>
+            </div>
         )
     }
 }

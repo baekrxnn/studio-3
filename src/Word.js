@@ -38,7 +38,8 @@ export default class Word extends Component {
         return (
             <div>
                 <h1 style={{color:this.state.color}}>{this.state.wording}</h1>
-                <InputBox prompt={this.state.prompt} color={this.state.color} word={this.state.word}/>
+                <h2>Type the {this.state.prompt}!</h2>
+                <InputBox prompt={this.state.prompt} color={this.state.color} word={this.state.wording}/>
             </div>
             
         );
