@@ -50,11 +50,10 @@ export default class Word extends Component {
         console.log("totalScore state: "+this.state.totalScore);
         return (
             <div>
-                
-                <h1 style={{color:this.state.textcolor}}>{this.state.wording}</h1>
+                <h1 style={{color:this.state.textcolor}} id="theWord">{this.state.wording}</h1>
                 <h2>Type the {this.state.prompt}!</h2>
                 <InputBox prompt={this.state.prompt} color={this.state.textcolor} word={this.state.wording} ref={this.child} key={this.state.index}/>
-                <button onClick={this.question}> click </button>
+                <button onClick={this.question}> Submit </button>
                 {
                 /*<h1 style={{color:this.props.color}}>{this.props.wording}</h1>
                 <h2>Type the {this.props.prompt}!</h2>*/

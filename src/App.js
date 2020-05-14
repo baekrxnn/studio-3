@@ -11,7 +11,7 @@ export default class App extends Component {
     
     render() {
         return (
-          <div>
+          <div className="app">
               <h1>hi!</h1>
               <Word ref={this.child}/>
               {/*<InputBox prompt={this.state.prompt} color={this.state.color} wording={this.state.wording}/>*/}
