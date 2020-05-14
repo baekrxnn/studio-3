@@ -6,7 +6,6 @@ export default class InputBox extends Component{
         this.state = {
             score: 0,
             value: "",
-            question: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.answerCheck = this.answerCheck.bind(this);
@@ -19,7 +18,7 @@ export default class InputBox extends Component{
     
     handleSubmit = (event) => {
         // this.setState({value: event.target.value});
-        this.setState({score: this.props.score});
+        // this.setState({score: this.props.score});
         // console.log(this.state.score);
         let prompt = this.props.prompt;
         let color = this.props.color;
@@ -27,28 +26,25 @@ export default class InputBox extends Component{
         // console.log(prompt + color + word);
         //event.preventDefault();
         console.log(this.state.value);
-        if (prompt === "color" && this.state.value === color) {
-            this.setState({score: this.state.score++});
-            console.log(this.state.score);
+        if (prompt === "text color" && this.state.value === color) {
+            console.log("correct");
+            this.setState({value:""});
+            return 1;
         } else if (prompt === "word" && this.state.value === word) {
-            this.setState({score: this.state.score++});
-            console.log("score: "+this.state.score);
+            console.log("correct");
+            this.setState({value:""});
+            return 1;
         } else {
-            console.log(this.state.score);
+            console.log("incorrect");
+            this.setState({value:""});
+            return 0;
         }
-        // event.stopPropagation();
-        // event.nativeEvent.stopImmediatePropagation();
-        // console.log("submitted");
-    }
-
-    getScore = () => {
-        return this.state.score;
     }
     
     render() {
         return (
             <div className="box">
-                <input value={this.state.value} onChange={this.answerCheck}></input>
+                <input value={this.state.value} onChange={this.answerCheck} onKeyPress={this.answerCheck}></input>
                 {/*<button onClick={this.handleSubmit}> submit </button>*/}
             </div>
         )

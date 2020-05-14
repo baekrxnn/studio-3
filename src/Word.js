@@ -7,16 +7,17 @@ export default class Word extends Component {
         super();
         this.child= React.createRef();
         this.state = {
+            index:0,
             totalScore: 0,
-            prompt: "text color",
-            color: "blue",
+            prompt: "word",
+            textcolor: "blue",
             wording: "green",
         }
     }
 
     question = () => {
-        this.child.current.handleSubmit();
-        this.setState({totalScore: this.child.current.getScore()});
+        this.setState({totalScore: this.state.totalScore+this.child.current.handleSubmit()});
+        // console.log("totalScore state: "+this.state.totalScore);
         let colors = [
             "red",
             "orange",
@@ -30,21 +31,29 @@ export default class Word extends Component {
         let promptColor = Math.floor(Math.random()*colors.length);
         let promptWord = Math.floor(Math.random()*colors.length);
         let prompted = Math.floor(Math.random()*2);
-        (prompted===0 ? this.setState({prompt: "text color"}) : this.setState({prompt:"word"}))
+        (prompted===0 ? this.setState({prompt: "word"}) : this.setState({prompt:"text color"}))
         this.setState ({
-            color: colors[promptColor],
+            index: this.state.index++,
+            textcolor: colors[promptColor],
             wording: colors[promptWord],
         })
     }
+
+    getScore = () => {
+        this.props.parentFunction();
+        return this.state.totalScore;
+    }
     
     render() {
-        // this.question();
+        console.log("");
+        // console.log(this.state);
+        console.log("totalScore state: "+this.state.totalScore);
         return (
             <div>
                 
-                <h1 style={{color:this.state.color}}>{this.state.wording}</h1>
+                <h1 style={{color:this.state.textcolor}}>{this.state.wording}</h1>
                 <h2>Type the {this.state.prompt}!</h2>
-                <InputBox score={this.state.totalScore} prompt={this.state.prompt} color={this.state.color} word={this.state.wording} ref={this.child}/>
+                <InputBox prompt={this.state.prompt} color={this.state.textcolor} word={this.state.wording} ref={this.child} key={this.state.index}/>
                 <button onClick={this.question}> click </button>
                 {
                 /*<h1 style={{color:this.props.color}}>{this.props.wording}</h1>
