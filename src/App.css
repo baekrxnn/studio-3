@@ -1,9 +1,17 @@
-.app {
+.game {
     margin: 0px;
     text-align: center;
     height: 100vh;
     font-size: large;
     font-family: 'Roboto Mono', monospace;
+}
+
+.timer {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Roboto Mono', monospace;
+    color: darkblue;
+    background-color: rgb(169, 216, 196);
 }
 
 #theWord {

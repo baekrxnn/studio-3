@@ -12,11 +12,17 @@ export default class App extends Component {
     
     render() {
         return (
-            <div className="app">
-                <Timer/>
-                <Word ref={this.child}/>
-                {/*<InputBox prompt={this.state.prompt} color={this.state.color} wording={this.state.wording}/>*/}
-                <h5>Read about the <a href="https://dictionary.apa.org/stroop-effect" target="_blank">Stroop Effect</a>, the science behind this game</h5>
+            <div>
+                <div>
+                    <Timer/>
+                </div>
+                
+                <div className="game">
+                    <Word ref={this.child}/>
+                    {/*<InputBox prompt={this.state.prompt} color={this.state.color} wording={this.state.wording}/>*/}
+                    <h5>Read about the <a href="https://dictionary.apa.org/stroop-effect" target="_blank">Stroop Effect</a>, the science behind this game</h5>
+                </div>
+                
             </div>
         );
     }
