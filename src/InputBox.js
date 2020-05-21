@@ -26,6 +26,7 @@ export default class InputBox extends Component{
         // console.log(prompt + color + word);
         //event.preventDefault();
         console.log(this.state.value);
+        console.log(prompt+word);
         if (prompt === "text color" && this.state.value === color) {
             console.log("correct");
             this.setState({value:""});
