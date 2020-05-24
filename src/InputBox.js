@@ -25,11 +25,12 @@ export default class InputBox extends Component{
         //event.preventDefault();
         console.log(this.state.value);
         // console.log(prompt+word);
-        if (prompt === "text color" && this.state.value === color) {
+        let received = this.state.value;
+        if (prompt === "text color" && received.toLowerCase() === color) {
             console.log("correct");
             this.setState({value:""});
             return 1;
-        } else if (prompt === "word" && this.state.value === word) {
+        } else if (prompt === "word" && received.toLowerCase() === word) {
             console.log("correct");
             this.setState({value:""});
             return 1;
