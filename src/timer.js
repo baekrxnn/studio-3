@@ -41,25 +41,12 @@ export default class Timer extends Component {
 
     render() {
         const {formattedMin, formattedSec} = this.state;
-        if (this.state.gameOver) {
-            this.props.parentFunction();
-            // alert("gameOver!");
-            let score = this.props.score;
-            let attempts = this.props.attempts;
-            console.log(`${score} out of ${attempts}`);
-            return(
-                <div>
-                    <h1> your accuracy is {(score/attempts)}</h1>
-                </div>
-            )
-        } else {
             return(
                 <div className="timer">
                     <h2>Time Remaining </h2>
                     <h1>{formattedMin} : {formattedSec}</h1>
                 </div>
             )
-        }
         
     }
 }

@@ -19,15 +19,11 @@ export default class App extends Component {
         }
     }
 
-    update = () => {
-        alert("game over from App")
-    }
-
     question = () => {
         this.setState({gameOver: this.time.current.isGameOver()})
         console.log(this.state.gameOver);
         if (this.state.gameOver) {
-            alert("game over from App")
+            alert("game over from App");
         } else {
             this.setState({
                 totalScore: this.state.totalScore+this.child.current.handleSubmit(),
@@ -62,7 +58,7 @@ export default class App extends Component {
         return (
             <div>
                 <div>
-                    <Timer ref={this.time} score={this.state.totalScore} attempts={this.state.index} parentFunction={this.update} />
+                    <Timer ref={this.time} score={this.state.totalScore} attempts={this.state.index} parentFunction={this.question} />
                 </div>
                 
                 <div className="game">
