@@ -21,7 +21,7 @@ export default class App extends Component {
 
     question = () => {
         this.setState({gameOver: this.time.current.isGameOver()})
-        console.log(this.state.gameOver);
+        // console.log(this.state.gameOver);
         if (this.state.gameOver) {
             alert("game over from App");
         } else {
@@ -50,11 +50,28 @@ export default class App extends Component {
             })
         }
     }
+
+    reset = () => {
+        this.setState({
+            gameOver: false,
+            totalScore: 0,
+            index: 0,
+        })
+    }
     
     render() {
-        console.log(this.state.totalScore);
-        console.log(this.state.index+1);
-        //console.log(this.time);
+        console.log(`Score: ${this.state.totalScore}`);
+        console.log(`Question ${this.state.index+1}`);
+        if (this.state.gameOver) {
+            return(
+                <div className="endScreen">
+                    <h1> Game Over!</h1>
+                    <h1> Your accuracy was {(Math.round(this.state.totalScore/this.state.index*100))}%</h1>
+                    <br></br>
+                    <button onClick={this.reset}> Play Again! </button>
+                </div>
+            )
+        }
         return (
             <div>
                 <div>
@@ -65,7 +82,6 @@ export default class App extends Component {
                     <Word question={this.state.textcolor} prompt={this.state.prompt} color={this.state.textcolor} word={this.state.wording}/>
                     <InputBox prompt={this.state.prompt} color={this.state.textcolor} word={this.state.wording} ref={this.child} key={this.state.index}/>
                     <button onClick={this.question}> Submit </button>
-                    {/*<InputBox prompt={this.state.prompt} color={this.state.color} wording={this.state.wording}/>*/}
                     <h5>Learn about the <a href="https://youtu.be/reUic5tyVwo?t=10" target="_blank">Stroop Effect</a>, the science behind this game</h5>
                 </div>
                 

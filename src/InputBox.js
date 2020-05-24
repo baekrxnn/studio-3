@@ -12,21 +12,19 @@ export default class InputBox extends Component{
     }
     
     answerCheck = (event) => {
-        this.setState({value: event.target.value});
-        // console.log(this.state.value);
+        // let received = event.target.value.trim()
+        this.setState({value:event.target.value.trim()});
+        // console.log(received+"hi");
     }
     
-    handleSubmit = (event) => {
-        // this.setState({value: event.target.value});
-        // this.setState({score: this.props.score});
-        // console.log(this.state.score);
+    handleSubmit = () => {
         let prompt = this.props.prompt;
         let color = this.props.color;
         let word = this.props.word;
         // console.log(prompt + color + word);
         //event.preventDefault();
         console.log(this.state.value);
-        console.log(prompt+word);
+        // console.log(prompt+word);
         if (prompt === "text color" && this.state.value === color) {
             console.log("correct");
             this.setState({value:""});
@@ -46,7 +44,6 @@ export default class InputBox extends Component{
         return (
             <div className="box">
                 <input value={this.state.value} onChange={this.answerCheck} onKeyPress={this.answerCheck}></input>
-                {/*<button onClick={this.handleSubmit}> submit </button>*/}
             </div>
         )
     }

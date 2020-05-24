@@ -5,7 +5,7 @@ export default class Timer extends Component {
     constructor(){
         super();
         this.state = {
-            seconds: 12,
+            seconds: 120,
             formattedMin: "2",
             formattedSec: "00",
             gameOver: false
