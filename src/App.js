@@ -67,6 +67,7 @@ export default class App extends Component {
                 <div className="endScreen">
                     <h1> Game Over!</h1>
                     <h1> Your accuracy was {(Math.round(this.state.totalScore/this.state.index*100))}%</h1>
+                    <p>{this.state.totalScore} correct out of {this.state.index} questions</p>
                     <br></br>
                     <button onClick={this.reset}> Play Again! </button>
                 </div>
@@ -79,6 +80,8 @@ export default class App extends Component {
                 </div>
                 
                 <div className="game">
+                    <p>Score: {this.state.totalScore}</p>
+                    <p>Question #{this.state.index+1}</p>
                     <Word question={this.state.textcolor} prompt={this.state.prompt} color={this.state.textcolor} word={this.state.wording}/>
                     <InputBox prompt={this.state.prompt} color={this.state.textcolor} word={this.state.wording} ref={this.child} key={this.state.index}/>
                     <br></br>

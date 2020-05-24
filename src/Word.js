@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import InputBox from './InputBox.js';
 import './App.css';
 
 export default class Word extends Component {

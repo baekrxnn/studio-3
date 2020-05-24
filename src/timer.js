@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import swal from 'sweetalert';
+// import swal from 'sweetalert';
 
 export default class Timer extends Component {
     constructor(){
