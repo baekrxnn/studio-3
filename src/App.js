@@ -81,6 +81,7 @@ export default class App extends Component {
                 <div className="game">
                     <Word question={this.state.textcolor} prompt={this.state.prompt} color={this.state.textcolor} word={this.state.wording}/>
                     <InputBox prompt={this.state.prompt} color={this.state.textcolor} word={this.state.wording} ref={this.child} key={this.state.index}/>
+                    <br></br>
                     <button onClick={this.question}> Submit </button>
                     <h5>Learn about the <a href="https://youtu.be/reUic5tyVwo?t=10" target="_blank">Stroop Effect</a>, the science behind this game</h5>
                 </div>

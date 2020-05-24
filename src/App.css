@@ -6,12 +6,31 @@
     font-family: 'Roboto Mono', monospace;
 }
 
+button {
+    padding: 20px;
+    font-size: medium;
+}
+
 .timer {
     display: flex;
     justify-content: space-around;
     font-family: 'Roboto Mono', monospace;
     color: darkblue;
     background-color: rgb(169, 216, 196);
+}
+
+.endScreen {
+    height: 100vh;
+    display: block;
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+    background-color: #a9d8c4; /* This is the same color as the timer's bg color*/
+    color: #1122a7;
+}
+
+.endScreen h1 {
+    font-size: 60px;
+
 }
 
 #theWord {
